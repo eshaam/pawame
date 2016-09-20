@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html class="full-height" lang="en">
   <head>
-    <title>PawameWebsite</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="
+    <%= content_for?(:page_description) ? yield(:page_description) :
+    "We believe providing reliable, safe and affordable Solar energy
+    is not only an undeniable necessity, but also an obligation.
+    Our work stems from the understanding of a first-hand necessity:
+    the need for energy, limited by lack of financing." %>">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pawame - <%= content_for?(:page_title) ? yield(:page_title) :
+    "A team of international and local people working passionately to
+    improve the quality of life of low income offgrid consumers with an
+    affordable, clean and safe energy source." %>
+    </title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'pawame_favicon.png' %>
   </head>
 
   <body>
     <%= yield %>
+
+
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
